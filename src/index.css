@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-md transition-colors duration-200 font-semibold;
+  }
+  .btn-primary {
+    @apply bg-primary-brown text-white hover:bg-primary-brown-dark dark:bg-primary-cream dark:text-primary-brown dark:hover:bg-primary-cream-dark;
+  }
+  .btn-secondary {
+    @apply bg-secondary-cream text-primary-brown hover:bg-secondary-cream-dark dark:bg-secondary-brown dark:text-primary-cream dark:hover:bg-secondary-brown-light;
+  }
+  .nav-link {
+    @apply text-primary-brown dark:text-primary-cream hover:text-secondary-brown dark:hover:text-secondary-cream transition-colors duration-200 px-2 py-1 rounded-md;
+  }
+  .footer-link {
+    @apply text-primary-brown dark:text-primary-cream hover:text-secondary-brown dark:hover:text-secondary-cream transition-colors duration-200;
+  }
+  .social-icon {
+    @apply text-3xl hover:text-primary-brown dark:hover:text-primary-cream transition-colors duration-200;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  }
+  .footer-gradient {
+    background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.05));
+  }
+}
