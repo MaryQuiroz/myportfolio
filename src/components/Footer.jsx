@@ -24,14 +24,11 @@ const Footer = ({ content }) => {
         <div>
           <h2 className="text-2xl font-semibold mb-4">{content[language].followMe}</h2>
           <div className="flex space-x-4">
-            <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="social-icon hover:scale-110 transition-transform duration-200">
+            <a href="https://github.com/MaryQuiroz" target="_blank" rel="noopener noreferrer" className="social-icon hover:scale-110 transition-transform duration-200">
               <FaGithub />
             </a>
-            <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" className="social-icon hover:scale-110 transition-transform duration-200">
+            <a href="https://www.linkedin.com/in/maryquiroz" target="_blank" rel="noopener noreferrer" className="social-icon hover:scale-110 transition-transform duration-200">
               <FaLinkedin />
-            </a>
-            <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer" className="social-icon hover:scale-110 transition-transform duration-200">
-              <FaTwitter />
             </a>
           </div>
         </div>
