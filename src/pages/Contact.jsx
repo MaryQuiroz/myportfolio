@@ -6,6 +6,7 @@ function Contact() {
   const language = useSelector((state) => state.language);
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [status, setStatus] = useState('');
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const content = {
     es: {
@@ -14,7 +15,9 @@ function Contact() {
       email: 'Correo electrónico',
       message: 'Mensaje',
       send: 'Enviar',
-      downloadCV: 'Descargar CV',
+      downloadCV: 'Descargar CV ▼',
+      downloadFCV: 'CV Frontend',
+      downloadBCV: 'CV Backend',
       success: 'Mensaje enviado con éxito',
       error: 'Error al enviar el mensaje. Por favor, inténtalo de nuevo.',
     },
@@ -24,7 +27,9 @@ function Contact() {
       email: 'Email',
       message: 'Message',
       send: 'Send',
-      downloadCV: 'Download CV',
+      downloadCV: 'Download CV ▼',
+      downloadFCV: 'Frontend CV',
+      downloadBCV: 'Backend CV',
       success: 'Message sent successfully',
       error: 'Error sending message. Please try again.',
     },
@@ -34,7 +39,9 @@ function Contact() {
       email: 'E-Mail',
       message: 'Nachricht',
       send: 'Senden',
-      downloadCV: 'Lebenslauf herunterladen',
+      downloadCV: 'Lebenslauf ▼',
+      downloadFCV: 'Frontend-Lebenslauf',
+      downloadBCV: 'Backend-Lebenslauf',
       success: 'Nachricht erfolgreich gesendet',
       error: 'Fehler beim Senden der Nachricht. Bitte versuchen Sie es erneut.',
     },
@@ -47,8 +54,8 @@ function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
     emailjs.send(
-      'service_kaohhca', // Reemplaza con tu Service ID de EmailJS
-      'template_6isq4gi', // Reemplaza con tu Template ID de EmailJS
+      'service_kaohhca',
+      'template_6isq4gi',
       {
         from_name: formData.name,
         from_email: formData.email,
@@ -56,7 +63,7 @@ function Contact() {
         to_email: 'maryqr21@gmail.com',
         to_phone: '637612072',
       },
-      'NRcZQ86tDrH3Tc7EZ' // Reemplaza con tu Public key de EmailJS
+      'NRcZQ86tDrH3Tc7EZ'
     )
     .then((response) => {
       console.log('SUCCESS!', response.status, response.text);
@@ -66,6 +73,21 @@ function Contact() {
       console.log('FAILED...', err);
       setStatus('error');
     });
+  };
+
+  const handleDownloadCV = (cvType) => {
+    const cvUrls = {
+      frontend: './Cv-MaryQuiroz-Frontend-en.pdf',
+      backend: './Cv-MaryQuiroz-Backend-en.pdf'
+    };
+
+    const link = document.createElement('a');
+    link.href = cvUrls[cvType];
+    link.download = `MaryQuiroz-${cvType}-CV.pdf`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    setIsDropdownOpen(false);
   };
 
   return (
@@ -121,16 +143,43 @@ function Contact() {
       )}
 
       <div className="mt-8 text-center">
-        <h2 className="text-2xl font-semibold mb-4 text-secondary-brown dark:text-secondary-cream">Redes Sociales</h2>
+        <h2 className="text-2xl font-semibold mb-4 text-secondary-brown dark:text-primary-cream">Redes Sociales</h2>
         <div className="flex justify-center space-x-4">
-          <a href="#" className="text-primary-brown dark:text-primary-cream hover:text-secondary-brown dark:hover:text-secondary-cream">LinkedIn</a>
-          <a href="#" className="text-primary-brown dark:text-primary-cream hover:text-secondary-brown dark:hover:text-secondary-cream">GitHub</a>
-          <a href="#" className="text-primary-brown dark:text-primary-cream hover:text-secondary-brown dark:hover:text-secondary-cream">Twitter</a>
+          <a href="https://www.linkedin.com/in/maryquiroz/" target="_blank" rel="noopener noreferrer" className="text-primary-brown dark:text-primary-cream hover:text-secondary-brown dark:hover:text-secondary-cream">LinkedIn</a>
+          <a href="https://github.com/MaryQuiroz" target="_blank" rel="noopener noreferrer" className="text-primary-brown dark:text-primary-cream hover:text-secondary-brown dark:hover:text-secondary-cream">GitHub</a>
         </div>
       </div>
 
-      <div className="mt-8 text-center">
-        <button className="btn btn-secondary">{content[language].downloadCV}</button>
+      <div className=" mt-8 flex items-center justify-center">
+        <div className="relative">
+          <button 
+            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+            className="btn btn-secondary inline-flex items-center"
+          >
+            {content[language].downloadCV}
+          </button>
+          
+          {isDropdownOpen && (
+            <div className="absolute z-10 mt-2 w-48 rounded-md shadow-lg bg-primary-cream dark:bg-primary-brown">
+              <div className="rounded-md ring-1 ring-black ring-opacity-5">
+                <div className="py-1">
+                  <button
+                    onClick={() => handleDownloadCV('frontend')}
+                    className="block w-full text-left px-4 py-2 text-primary-brown dark:text-primary-cream hover:bg-secondary-cream dark:hover:bg-secondary-brown"
+                  >
+                    {content[language].downloadFCV}
+                  </button>
+                  <button
+                    onClick={() => handleDownloadCV('backend')}
+                    className="block w-full text-left px-4 py-2 text-primary-brown dark:text-primary-cream hover:bg-secondary-cream dark:hover:bg-secondary-brown"
+                  >
+                    {content[language].downloadBCV}
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

@@ -17,7 +17,7 @@ function Home() {
       projects: 'Proyectos',
       contact: 'Contacto',
       viewMore: 'Ver más',
-      workTogether: '¿Interesado en trabajar juntos?',
+      workTogether: '¿Interesado/a en trabajar juntos?',
       taskManager: 'Aplicación de Gestión de Tareas',
       taskManagerTech: 'React, Node.js, Express, MongoDB',
       eLearning: 'Plataforma de E-learning',

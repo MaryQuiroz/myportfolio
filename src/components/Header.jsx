@@ -44,7 +44,7 @@ import { FaGlobe, FaChevronDown, FaSun, FaMoon } from 'react-icons/fa';
             <div className="relative">
               <button
                 onClick={() => setIsLanguageMenuOpen(!isLanguageMenuOpen)}
-                className="btn btn-secondary transition-colors duration-200 flex items-center"
+                className="btn btn-secondary transition-colors duration-200 flex  items-center dark:hover:bg-primary-brown-dark"
                 aria-label="Seleccionar idioma"
                 aria-haspopup="true"
                 aria-expanded={isLanguageMenuOpen}
@@ -54,12 +54,12 @@ import { FaGlobe, FaChevronDown, FaSun, FaMoon } from 'react-icons/fa';
                 <FaChevronDown className="ml-2" aria-hidden="true" />
               </button>
               {isLanguageMenuOpen && (
-                <div className="absolute right-0 mt-2 py-2 w-48 bg-white dark:bg-cream-800 rounded-md shadow-xl z-20">
+                <div className="absolute right-0 mt-2 py-2 w-48 rounded-md shadow-xl z-20 bg-secondary-cream-dark dark:bg-primary-brown-dark ">
                   {languages.map((lang) => (
                     <button
                       key={lang.code}
                       onClick={() => handleLanguageChange(lang.code)}
-                      className="block px-4 py-2 text-sm text-cream-700 dark:text-cream-200 hover:bg-cream-100 dark:hover:bg-cream-700 w-full text-left"
+                      className="block px-4 py-2 text-sm text-cream-700 hover:bg-secondary-cream-light dark:text-cream-200 dark:hover:bg-primary-brown-light w-full text-left"
                     >
                       {lang.name}
                     </button>

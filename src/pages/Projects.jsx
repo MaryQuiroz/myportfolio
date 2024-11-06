@@ -12,7 +12,6 @@ function Projects() {
       all: 'Todos',
       web: 'Web',
       mobile: 'Móvil',
-      other: 'Otros',
       viewProject: 'Ver proyecto',
     },
     en: {
@@ -21,7 +20,6 @@ function Projects() {
       all: 'All',
       web: 'Web',
       mobile: 'Mobile',
-      other: 'Other',
       viewProject: 'View project',
     },
     de: {
@@ -30,7 +28,6 @@ function Projects() {
       all: 'Alle',
       web: 'Web',
       mobile: 'Mobil',
-      other: 'Andere',
       viewProject: 'Projekt ansehen',
     },
   };
@@ -86,7 +83,6 @@ function Projects() {
           <option value="all">{content[language].all}</option>
           <option value="web">{content[language].web}</option>
           <option value="mobile">{content[language].mobile}</option>
-          <option value="other">{content[language].other}</option>
         </select>
       </div>
       

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaReact, FaVuejs, FaNodeJs, FaPython, FaDatabase, FaGitAlt } from 'react-icons/fa';
-import { SiExpress, SiMongodb, SiTailwindcss } from 'react-icons/si';
+import { SiExpress, SiMongodb, SiTailwindcss, SiDjango, SiPandas } from 'react-icons/si';
 import { TbApi } from 'react-icons/tb';
 
 const skills = [
@@ -15,7 +15,9 @@ const skills = [
   { name: 'RESTful APIs', icon: <TbApi /> },
   { name: 'Tailwind CSS', icon: <SiTailwindcss /> },
   { name: 'Git', icon: <FaGitAlt /> },
-];
+  { name: 'Django', icon: <SiDjango /> }, 
+  { name: 'Pandas', icon: <SiPandas /> }, 
+]
 
 const SkillsList = ({ title }) => {
   return (
