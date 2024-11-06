@@ -77,8 +77,8 @@ function Contact() {
 
   const handleDownloadCV = (cvType) => {
     const cvUrls = {
-      frontend: './Cv-MaryQuiroz-Frontend-en.pdf',
-      backend: './Cv-MaryQuiroz-Backend-en.pdf'
+      frontend: './CV-MaryQuiroz-Frontend.pdf',
+      backend: './CV-MaryQuiroz-Backend.pdf'
     };
 
     const link = document.createElement('a');

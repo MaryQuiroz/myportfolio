@@ -37,34 +37,28 @@ function Projects() {
       id: 1,
       name: 'Aplicación de Gestión de Tareas',
       category: 'web',
-      description: 'Aplicación web para gestionar tareas con autenticación de usuarios y operaciones CRUD.',
-      technologies: ['React', 'Node.js', 'Express', 'MongoDB'],
+      description: 'Aplicación Web para gestionar tareas con autenticación de usuarios y operaciones CRUD.',
+      technologies: ['Node.js', 'Express','vite', 'React', 'MongoDB', 'TailwindCss'],
       link: '#'
     },
     {
       id: 2,
-      name: 'Plataforma de E-learning',
+      name: 'TaskFlow',
       category: 'web',
-      description: 'Sistema de cursos online con seguimiento de progreso del estudiante.',
-      technologies: ['Vue.js', 'Python', 'Flask', 'SQL', 'Django'],
+      description: 'Gestion de Proyectos para Freelance',
+      technologies: ['Node.js', 'Express','vite', 'React', 'MongoDB', 'TailwindCss'],
       link: '#'
     },
     {
       id: 3,
-      name: 'Aplicación de Recetas Saludables',
-      category: 'mobile',
-      description: 'App móvil para buscar y guardar recetas saludables, con cálculo de calorías.',
-      technologies: ['React Native', 'Firebase'],
-      link: '#'
-    },
-    {
-      id: 4,
-      name: 'Dashboard de Análisis de Datos',
+      name: 'Plataforma de E-learning',
       category: 'web',
-      description: 'Dashboard interactivo para visualizar y analizar datos de ventas.',
-      technologies: ['D3.js', 'Node.js', 'Express', 'PostgreSQL'],
+      description: 'Sistema de cursos online con seguimiento de progreso del estudiante.',
+      technologies: ['Python', 'Django', 'Machine Learning', 'MySQL', 'TailwindCss'],
       link: '#'
-    },
+    }
+    
+    
   ];
 
   const filteredProjects = filter === 'all' ? projects : projects.filter(project => project.category === filter);
