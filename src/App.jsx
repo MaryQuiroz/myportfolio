@@ -55,7 +55,7 @@ function App() {
   };
 
   return (
-    <Router>
+    <Router basename="/myportfolio">
       <div className={`min-h-screen flex flex-col transition-colors duration-300 ${theme === 'light' ? 'bg-primary-cream text-primary-brown' : 'dark bg-primary-brown text-primary-cream'}`}>
         <Header content={content} />
         <main className="container mx-auto mt-8 px-6 flex-grow">
