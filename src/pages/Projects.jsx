@@ -8,26 +8,14 @@ function Projects() {
   const content = {
     es: {
       title: 'Mis Proyectos',
-      filter: 'Filtrar por:',
-      all: 'Todos',
-      web: 'Web',
-      mobile: 'Móvil',
       viewProject: 'Ver proyecto',
     },
     en: {
       title: 'My Projects',
-      filter: 'Filter by:',
-      all: 'All',
-      web: 'Web',
-      mobile: 'Mobile',
       viewProject: 'View project',
     },
     de: {
       title: 'Meine Projekte',
-      filter: 'Filtern nach:',
-      all: 'Alle',
-      web: 'Web',
-      mobile: 'Mobil',
       viewProject: 'Projekt ansehen',
     },
   };
@@ -35,19 +23,19 @@ function Projects() {
   const projects = [
     {
       id: 1,
-      name: 'Aplicación de Gestión de Tareas',
+      name: 'Cat App',
       category: 'web',
-      description: 'Aplicación Web para gestionar tareas con autenticación de usuarios y operaciones CRUD.',
+      description: 'Cat App es una aplicación diseñada para ayudar a los dueños de gatos a gestionar y cuidar a sus amigos felinos. La aplicación incluye características esenciales como perfiles de gatos y listas de tareas. Aplicación Web para gestionar tareas con autenticación de usuarios y operaciones CRUD.',
       technologies: ['Node.js', 'Express','vite', 'React', 'MongoDB', 'TailwindCss'],
-      link: '#'
+      link: 'https://github.com/MaryQuiroz/CatApp.git'
     },
     {
       id: 2,
       name: 'TaskFlow',
       category: 'web',
-      description: 'Gestion de Proyectos para Freelance',
+      description: 'TaskFlow es una aplicación web completa para la gestión de proyectos, clientes y facturación. Permite a los usuarios administrar sus proyectos, dar seguimiento a clientes y generar facturas de manera eficiente.',
       technologies: ['Node.js', 'Express','vite', 'React', 'MongoDB', 'TailwindCss'],
-      link: '#'
+      link: 'https://github.com/MaryQuiroz/TaskFlow'
     },
     {
       id: 3,
@@ -67,18 +55,7 @@ function Projects() {
     <div className="projects">
       <h1 className="text-4xl font-bold mb-8 text-primary-brown dark:text-primary-cream">{content[language].title}</h1>
       
-      <div className="mb-8">
-        <label className="mr-4 text-primary-brown dark:text-primary-cream">{content[language].filter}</label>
-        <select 
-          value={filter} 
-          onChange={(e) => setFilter(e.target.value)}
-          className="bg-secondary-cream dark:bg-secondary-brown text-primary-brown dark:text-primary-cream p-2 rounded"
-        >
-          <option value="all">{content[language].all}</option>
-          <option value="web">{content[language].web}</option>
-          <option value="mobile">{content[language].mobile}</option>
-        </select>
-      </div>
+     
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredProjects.map((project) => (
