@@ -57,18 +57,18 @@ function Projects() {
       technologies: ['React', 'Vite', 'RESTful Apis', 'TailwindCss'],
       link: 'https://github.com/MaryQuiroz/CineMar'
     },
-    {
-      id: 4,
-      name: 'Plataforma de E-learning',
-      category: 'web',
-      description: {
-        es: 'Sistema de cursos online con seguimiento de progreso del estudiante.',
-        en: 'Online course system with student progress tracking.',
-        de: 'Online-Kurssystem mit Verfolgung des Lernfortschritts der Studenten.'
-      },
-      technologies: ['Python', 'Django', 'Machine Learning', 'MySQL', 'TailwindCss'],
-      link: '#'
-    },
+    // {
+    //   id: 4,
+    //   name: 'Plataforma de E-learning',
+    //   category: 'web',
+    //   description: {
+    //     es: 'Sistema de cursos online con seguimiento de progreso del estudiante.',
+    //     en: 'Online course system with student progress tracking.',
+    //     de: 'Online-Kurssystem mit Verfolgung des Lernfortschritts der Studenten.'
+    //   },
+    //   technologies: ['Python', 'Django', 'Machine Learning', 'MySQL', 'TailwindCss'],
+    //   link: '#'
+    // },
   ];
 
   const filteredProjects = filter === 'all' ? projects : projects.filter(project => project.category === filter);
